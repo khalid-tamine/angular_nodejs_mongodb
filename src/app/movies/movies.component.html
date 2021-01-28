@@ -1,0 +1,17 @@
+
+<input type="text" [(ngModel)]="research" (ngModelChange)="getfilm()">
+<button (click)="afficher()">zzzz</button>
+<!-- {{films | json}} -->
+<div class="container">
+  <div class="card" style="width: 18rem;" *ngFor="let f of films.Search" >
+    <img class="card-img-top" src="{{f.Poster}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{f.Title}}</h5>
+      <p class="card-text">{{f.Type}}</p>
+      <p class="card-text">{{f.Year}}</p>
+      <a href="#" download class="btn btn-primary">download</a>
+    </div>
+  </div>
+
+</div>
+
