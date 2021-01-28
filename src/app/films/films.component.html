@@ -1,0 +1,38 @@
+
+<form [formGroup]="fileUploadForm" (ngSubmit)="onFormSubmit()">
+  <div class="row">
+    <div class="col-sm-12">
+      <div>
+        <h6 class="head-title margin-top-8"><span>ajouter un film</span></h6>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <input type="text" formControlName="name" name="name" placeholder="nom de film" required>
+      <input type="text" formControlName="description" name="description" placeholder="entrer une description" required>
+      <div class="custom-file">
+
+        <input type="file" class="custom-file-input" id="customFile" name="uploadedImage"
+          (change)="onFileSelect($event)" #UploadFileInput>
+
+        <label class="custom-file-label" for="customFile">{{fileInputLabel || 'Choisir une image'}}</label>
+
+      </div>
+
+    </div>
+
+    <div class="col-sm-8"> <button class="btn btn-primary" type="submit">Upload</button> </div>
+
+  </div>
+</form>
+
+
+<div class="row">
+  <div class="card" style="width:400px" *ngFor="let s of films">
+    <img class="card-img-top" src="../assets/{{s.productImage}}" alt="Card image">
+    <div class="card-body">
+      <h4 class="card-title">{{s.name}}</h4>
+      <p class="card-text">{{s.description}}</p>
+      <button class="btn btn-primary" (click)="supSub(s._id)" >supprimer</button>
+    </div>
+  </div>
+</div>
