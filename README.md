@@ -1,9 +1,10 @@
 # angular_nodejs_mongodb
 
-folder node project
+# about node project folder :
 create a folder and add node modules and .env file where you write the connect url ( you ll find it in mongodb website)
 
-Folder src is for angular application , 
+# about src folder :
+
 Missing folder in src :
  - assets 
 Missing file in src :
